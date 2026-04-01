@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Generated files
+backend/temp_uploads/
+backend/generated_reports/
+backend/extracted_images/
+backend/test_ddr_output.pdf
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
