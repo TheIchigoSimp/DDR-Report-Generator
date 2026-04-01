@@ -107,6 +107,14 @@ def download_report(filename: str):
         filename=filename
     )
     
+from fastapi.staticfiles import StaticFiles
+import pathlib
+
+frontend_dist = pathlib.Path(__file__).parent.parent / "frontend" / "dist"
+if frontend_dist.exists():
+    app.mount("/", StaticFiles(directory=str(frontend_dist), html=True), name="frontend")
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
